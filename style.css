@@ -1,0 +1,142 @@
+:root {
+  --red: hsl(0, 78%, 62%);
+  --cyan: hsl(180, 62%, 55%);
+  --orange: hsl(34, 97%, 64%);
+  --blue: hsl(212, 86%, 64%);
+  --very-dark-blue: hsl(234, 12%, 34%);
+  --grayish-blue: hsl(229, 6%, 66%);
+  --very-light-gray: hsl(0, 0%, 98%);
+}
+
+body {
+  width: 100%;
+  font-size: 15px;
+  font-family: "Poppins";
+  /* Weights: 200, 400, 600 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: var(--grayish-blue);
+  font-weight: 200;
+}
+
+.layout__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: clamp(0px, 84%, 600px);
+  text-align: center;
+  margin: 1.5rem 0;
+}
+
+.header__title,
+.header__title-bold {
+  font-size: 1.5rem;
+  margin: 0.4rem 0;
+  color: var(--very-dark-blue);
+}
+
+.header__description {
+  margin-bottom: 2rem;
+}
+
+.header__title-bold {
+  font-weight: 400;
+  margin-bottom: 1.4rem;
+}
+
+.layout__main {
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main__card {
+  width: 85%;
+  max-width: 350px;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-radius: 0.3rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0px 17px 40px -17px hsl(229, 6%, 66%);
+  transition: scale 1s;
+}
+
+.main__card:hover {
+  scale: 1.1;
+}
+
+.card__title {
+  font-weight: 600;
+  color: var(--very-dark-blue);
+  font-size: 1.05rem;
+  margin-bottom: 0.5rem;
+}
+
+.card__description {
+  font-size: 0.9rem;
+}
+
+.img__container {
+  width: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin: 1.5rem 0;
+}
+
+.card__img {
+  width: 70px;
+}
+
+.main__card--lightblue {
+  border-top: 4px solid hsl(180, 62%, 55%);
+}
+
+.main__card--red {
+  border-top: 4px solid hsl(0, 78%, 62%);
+}
+
+.main__card--yellow {
+  border-top: 4px solid hsl(34, 97%, 64%);
+}
+
+.main__card--darkblue {
+  border-top: 4px solid hsl(212, 86%, 64%);
+}
+
+@media (width >= 1024px) {
+  .layout__main {
+    margin: -50px 0;
+    display: grid;
+    place-items: center;
+    grid-template-rows: 110px 0.5fr 0.5fr 110px;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+  }
+  .main__card--lightblue {
+    grid-column: 1 /2;
+    grid-row: 2 /4;
+  }
+
+  .main__card--red {
+    grid-column: 2 / 3;
+    grid-row: 1/ 3;
+  }
+
+  .main__card--yellow {
+    grid-column: 2 / 3;
+    grid-row: 3/ 5;
+  }
+
+  .main__card--darkblue {
+    grid-column: 3 /4;
+    grid-row: 2 /4;
+  }
+  .layout__header {
+    margin: 1.4rem 0px;
+  }
+}
